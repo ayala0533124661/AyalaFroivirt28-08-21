@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-// import './App.css';
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Favorites from "./Component/homePage/Favorites";
 
@@ -15,7 +14,6 @@ function App() {
           <Route exact={true} path="/" component={HomePage}/>
           <Route path="/favorites" component={Favorites} />
         </Switch>
-
       </Router >
     </div>
   );
