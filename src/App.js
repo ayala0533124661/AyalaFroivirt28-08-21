@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-         <Header />
+        <Header />
         <Switch>
-          <Route exact={true} path="/" component={HomePage}/>
+          <Route exact={true} path="/" component={HomePage} />
           <Route path="/favorites" component={Favorites} />
         </Switch>
       </Router >
