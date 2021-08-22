@@ -56,8 +56,8 @@ export default function Search() {
   }
   return (
     <>
-      <input style={{marginLeft:"40%",marginTop:"3%",fontSize:"150%"}}onChange={(e) => dispatch(actions.setCurrentCity(e.target.value))} value={currentCity}></input>
-      <button style={{fontSize:"150%"}}onClick={search}>Search...</button>
+      <input style={{ marginLeft: "40%", marginTop: "3%", fontSize: "150%" }} onChange={(e) => dispatch(actions.setCurrentCity(e.target.value))} value={currentCity}></input>
+      <button style={{ fontSize: "150%" }} onClick={search}>Search...</button>
     </>
   );
 }
