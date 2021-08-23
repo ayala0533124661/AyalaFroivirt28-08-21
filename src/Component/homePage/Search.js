@@ -21,15 +21,14 @@ export default function Search() {
     axios({
       method: "get",
       // ${process.env.API_KEY}
-      url: `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=VR1AGkvHc7f07sAN1aLeBrTiTKjRY2Gp&q=${currentCity}`,
+      url: `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=GBK5cAlYGOGl1TCFGQB2NVftmF6ALw7E&q=${currentCity}`,
     })
       .then(function (response) {
         key = response?.data[0]?.Key
         // this http method return the temperature of the city
         axios({
           method: "get",
-          // ${process.env.API_KEY}
-          url: ` http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=VR1AGkvHc7f07sAN1aLeBrTiTKjRY2Gp`,
+          url: `http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=GBK5cAlYGOGl1TCFGQB2NVftmF6ALw7E`,
         }).then(function (response) {
           let temp = response.data[0].Temperature.Metric.Value;
           let weather = response.data[0].WeatherText;
@@ -38,8 +37,7 @@ export default function Search() {
           // this http method return the data of 5 days
           axios({
             method: "get",
-            // ${process.env.API_KEY}
-            url: ` http://dataservice.accuweather.com/forecasts/v1/daily/7day/${key}?apikey=VR1AGkvHc7f07sAN1aLeBrTiTKjRY2Gp&metric=true`,
+            url: `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=GBK5cAlYGOGl1TCFGQB2NVftmF6ALw7E&metric=true`,
           }).then(function (response) {
             dispatch(actions.setArrDays(response.data.DailyForecasts))
           }).catch((err) => {
