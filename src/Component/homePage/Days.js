@@ -5,7 +5,7 @@ export default function Days(props) {
   const { index,temp } = props
   let arrDays = ["Sun", "Mon", "Tue", "Wen", "Thu","Fri","Sut"];
   return (
-    <>
+    <> 
       <Card >
         <Card.Body >
           <Container className="d-flex-column justify-content-center">
